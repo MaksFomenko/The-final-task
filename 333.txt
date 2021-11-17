@@ -1,0 +1,85 @@
+/*3. Напишіть програму, яка імплементує клас “Тварина”, який містить поля “вид” та “ім’я”, і клас “Зоопарк”, 
+який містить список “тварин” та методи для додавання та вилучення “тварин” із нього.*/
+#include <iostream>
+
+using namespace std;
+class Animals {
+public:
+	string species, name;
+	Animals() {
+		name = "";
+		species = "";
+	}
+	void NewAnimal() {
+		cout << "Creating new animal..." << endl;
+		cout << "This animal's name is : ";
+		cin >> name;
+		cout << "Animal species is : ";
+		cin >> species;
+	}
+	void info() {
+		if (name != "" && species != "")
+			cout << "Animal name is " << name << ", species is " << species << endl;
+		else {
+			cout << endl;
+	    }
+	}
+};
+class Zoo {
+private:
+	Animals a, d, e;
+public:
+
+	void list() {
+		cout << "List of animals at the zoo:" << endl;
+		a.info();
+		d.info();
+		e.info();
+
+	}
+	void addAnim_a(Animals c) {
+		cout << "Adding animal to the zoo..." << endl;
+		a = c;
+	}
+	void addAnim_d(Animals a) {
+		cout << "Adding animal to the zoo..." << endl;
+		d = a;
+	}
+	void addAnim_e(Animals b) {
+		cout << "Adding animal to the zoo..." << endl;
+		e = b;
+
+	}
+	void remove_d() {
+		cout << "Removing animal from the zoo..." << endl;
+		d.name = "";
+		d.species = "";
+	}
+	void remove_e() {
+		cout << "Removing animal from the zoo..." << endl;
+		e.name = "";
+		e.species = "";
+	}
+	void remove_a() {
+		cout << "Removing animal from the zoo..." << endl;
+		a.name = "";
+		a.species = "";
+	}
+};
+int main() {
+	Animals a, b, c;
+	Zoo z;
+	z.list();
+	a.NewAnimal();
+	z.addAnim_a(a);
+	z.list();
+	b.NewAnimal();
+	z.addAnim_d(b);
+	c.NewAnimal();
+	z.addAnim_e(c);
+	z.list();
+	z.remove_a();
+	z.remove_d();
+	z.remove_e();
+	z.list();
+}
