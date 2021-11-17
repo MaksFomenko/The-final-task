@@ -1,0 +1,40 @@
+/*1. Напишіть програму, яка імплементує клас “Звичайний дріб”, 
+який містить поля “чисельник” та “знаменник” і метод, 
+який перевіряє, чи створений звичайни дріб є правильним.*/
+
+#include<iostream>
+#include<string.h>
+    using namespace std;
+
+    class UsualFraction {
+    private:
+        double a,b;
+    public:
+        void SetA() {
+            cout << "numerator::";
+           cin >> a;
+        }
+        void SetB() {
+            cout << "denominator::";
+            cin >> b;
+        }
+        void Contrl() {
+            if (a > b) {
+                cout << "is not a correct fraction" << endl;
+            }
+            else if (a < b) {
+                cout << "is a correct fraction" << endl;
+            }
+            else {
+                cout << "C=1" << endl;
+            }
+        }
+    };
+    int main()
+    {
+        UsualFraction a;
+        a.SetA();
+        a.SetB();
+        a.Contrl();  
+        return 0;
+    }
